@@ -1,0 +1,36 @@
+@model List<MovieApp.Models.ViewModels.MovieViewModel>
+@{
+    <h1>@ViewData["Movies"]</h1>
+}
+<!DOCTYPE html>
+<html>
+<head>
+  <link type="text/css" rel="stylesheet" href="~/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+<body>
+
+<form>
+  <button type="submit" asp-controller="Movies" asp-action="Create">Add Movie!</button>
+</form>
+<br>
+@using (Html.BeginForm())
+{
+  <p>
+    Title: @Html.TextBox("SearchString")<br/>
+      <input type="submit"value="Search" placeholder="Search movies.." />
+    
+  </p>
+}
+  <hr>
+@foreach(var Movie in Model)
+{
+    <ul class="list-group">  
+    <li class="list-group-item">
+    <b><a asp-controller="Movies" asp-action="Details" asp-route-id="@Movie.Id">@Movie.Title</a> Genre: @Movie.Genre Rating: @Movie.Rating </b>
+    
+    </li>
+    </ul>
+}
+</body>
+</html>

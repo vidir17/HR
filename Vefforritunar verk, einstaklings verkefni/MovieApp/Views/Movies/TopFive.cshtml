@@ -1,0 +1,14 @@
+@model List<MovieApp.Models.ViewModels.MovieViewModel>
+
+    <h1>Top 5</h1>
+
+@foreach(var Movie in Model)
+{
+    <ul class="list-group">  
+    <li class="list-group-item">
+    <b><a asp-controller="Movies" asp-action="Details" asp-route-id="@Movie.Id">
+    @Movie.Title</a> Genre: @Movie.Genre Rating: @Movie.Rating </b>
+    
+    </li>
+    </ul>
+}

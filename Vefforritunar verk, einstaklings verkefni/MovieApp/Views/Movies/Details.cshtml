@@ -1,0 +1,11 @@
+@model MovieApp.Models.ViewModels.MovieViewModel
+
+    <h1>Movie details</h1>
+    <hr>
+<h2><strong>@Model.Title (@Model.ReleaseYear)</strong></h2>
+<p>Genre: @Model.Genre<br></p>
+
+<p>Rating: @Model.Rating<br></p>
+<p>Runtime: @Model.Runtime<br></p>
+<img src=@Model.Image>
+</p>

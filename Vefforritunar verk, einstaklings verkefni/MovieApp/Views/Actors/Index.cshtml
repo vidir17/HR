@@ -1,0 +1,21 @@
+@model List<MovieApp.Models.ViewModels.ActorViewModel>
+@{
+    <h1>@ViewData["Actors"]</h1>
+}
+<!DOCTYPE html>
+<html>
+<head>
+  </head>
+<body>
+<br>
+  <hr>
+@foreach(var Actor in Model)
+{
+<table>
+    <tr>
+    <b><a asp-controller="Actors" asp-action="Details" asp-route-id="@Actor.Id">@Actor.Name</a> Age: @Actor.Age</b>
+    </tr>
+</table>
+}
+</body>
+</html>
